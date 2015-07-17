@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.thymeleaf.org/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layout/thymeleaf/default"
+      th:inline="text">
+<head>
+  <title>Spring Boot :: Web Template Engines</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="jumbotron">
+    <h1>Template Engines</h1>
+
+    <p>
+      A <b>Template Engine</b> is a software library that takes a generic template and
+      combines it with dynamic data to generate output in some desired format.  A
+      <b>Web Template Engine</b> is a templating engine that generates output suitable
+      for consumption by web clients (typically HTML or XHTML), such as, browsers.
+      Web template engines allows develops to generate web pages dynamically by combining
+      data with page templates.
+    </p>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Web Templating with Spring Boot</div>
+    <div class="panel-body">
+      <p>
+        Spring Boot supports the following templating engines out of the box and support
+        for more can be added easily.
+      </p>
+      <ul>
+        <li>
+          <a href="http://www.oracle.com/technetwork/java/javaee/jsp/index.html">JavaServer Pages (JSPs)</a>
+        </li>
+        <li>
+          <a href="http://www.thymeleaf.org">Thymeleaf</a>: See <a th:href="@{/template/thymeleaf}"><b>example</b></a>
+        </li>
+        <li>
+          <a href="http://www.freemarker.org">Freemarker</a>
+        </li>
+        <li>
+          <a href="http://velocity.apache.org">Apache Velocity</a>
+        </li>
+        <li>
+          <a href="http://mustache.github.io">Mustache</a>
+        </li>
+        <li>
+          <a href="https://github.com/neuland/jade4j">Jade4J</a>: Through a contribution.  See <a th:href="@{/template/jade4j}"><b>example</b></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

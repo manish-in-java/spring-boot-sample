@@ -1,0 +1,34 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap.css')
+    script(type='text/javascript', src='/script/jquery.js')
+    script(type='text/javascript', src='/script/bootstrap.js')
+    block head
+  body(role='document')
+    .navbar.navbar-inverse(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Spring Boot Sample
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle(href='/template', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Web Templating
+                span.caret
+              ul.dropdown-menu
+                li: a(href='/template/thymeleaf') Thymeleaf Template Engine
+                li: a(href='/template/jade4j') Jade4J Template Engine
+            li: a(href='https://github.com/manish-in-java/spring-boot-sample', target='_blank'). Source code
+    .container
+      block body
+    .navbar-default
+      .container
+        p
+        p.small.text-muted. Copyright 2015. All rights reserved

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.thymeleaf.org/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layout/thymeleaf/default"
+      th:inline="text">
+<head>
+  <title>Spring Boot :: Thymeleaf Template Engines</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="jumbotron">
+    <h1>Thymeleaf Template Engine</h1>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <p>
+        <a href="http://www.thymeleaf.org">Thymeleaf</a> is a template engine developed in Java that
+        supports generation of HTML, XML and XHTML content from template files.  The template files
+        contain strictly valid XHTML code so they can be opened in browsers or code editors during
+        development without any errors and allowing the templates to look like the final output
+        throughout development.
+      </p>
+      <p>
+        This page has been generated using Thymeleaf.
+      </p>
+    </div>
+    <div class="panel-footer">
+      See the <a href="https://github.com/manish-in-java/spring-boot-sample/tree/master/src/main/resources/templates/page/thymeleaf/template/template.html">template file</a> for this page.
+    </div>
+  </div>
+</div>
+</body>
+</html>

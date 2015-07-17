@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.thymeleaf.org/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layout/thymeleaf/default"
+      th:inline="text">
+<head>
+  <title>Spring Boot :: Welcome</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="jumbotron">
+    <h1>Welcome to Spring Boot!</h1>
+
+    <p>
+      <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> is a project under the <a href="http://spring.io">Spring Framework</a>
+      umbrella for developing stand-alone Java application quickly and reliably. It combines the Spring Framework with a variety of other
+      open-source libraries for rapidly developing and deploying Java applications using robust software design and development principles
+      such as <a href="https://en.wikipedia.org/wiki/Domain-driven_design">Domain-driven Design (DDD)</a>,
+      <a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">Service-oriented Architecture (SOA)</a> and
+      <a href="https://en.wikipedia.org/wiki/Microservices">Microservices</a>.
+    </p>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Spring Boot Features</div>
+    <div class="panel-body">
+      <p>The following Spring Boot features are demonstrated by this application.</p>
+      <ul>
+        <li>
+          <a th:href="@{/template}"><b>Web Templating</b></a>
+          <ul>
+            <li><a th:href="@{/template/thymeleaf}">Thymeleaf Template Engine</a></li>
+            <li><a th:href="@{/template/jade4j}">Jade4J Template Engine</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

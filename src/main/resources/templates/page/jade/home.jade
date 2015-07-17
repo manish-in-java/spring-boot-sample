@@ -1,0 +1,28 @@
+extends /layout/jade/default
+
+block head
+  title Spring Boot :: Welcome
+block body
+  .jumbotron
+    h1 Welcome to Spring Boot!
+    p
+      a(href='http://projects.spring.io/spring-boot/') Spring Boot
+      |  is a project under the
+      a(href='http://spring.io') Spring Framework
+      |  umbrella for developing stand-alone Java application quickly and reliably. It combines the Spring Framework with a variety of other
+      |  open-source libraries for rapidly developing and deploying Java applications using robust software design and development principles such as
+      a(href='https://en.wikipedia.org/wiki/Domain-driven_design') Domain-driven Design (DDD),
+      a(href='https://en.wikipedia.org/wiki/Service-oriented_architecture') Service-oriented Architecture (SOA)
+      |  and
+      a(href='https://en.wikipedia.org/wiki/Microservices') Microservices
+      | .
+  .panel.panel-primary
+    .panel-heading Spring Boot Features
+    .panel-body
+      p The following Spring Boot features are demonstrated by this application.
+      ul
+        li
+          a(href='/template'): b Web Templating
+          ul
+            li: a(href='/template/thymeleaf') Thymeleaf Template Engine
+            li: a(href='/template/jade4j') Jade4J Template Engine
