@@ -22,28 +22,28 @@
  * SOFTWARE.
  */
 
-package org.example;
+package org.example.controller;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.junit.Before;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 /**
- * Integration tests for {@link Application}.
+ * Unit tests for controllers.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-public class ApplicationTests
+public abstract class ControllerTests
 {
+  protected MockMvc mock;
+
   /**
-   * Tests the application's Spring context loads successfully.
+   * Sets up a mock servlet context for the tests to run.
    */
-  @Test
-  public void contextLoads()
+  @Before
+  public void setup()
   {
-    Application.main();
+    mock = MockMvcBuilders.standaloneSetup(controller())
+        .build();
   }
+
+  protected abstract Object controller();
 }

@@ -1,9 +1,23 @@
+group = "org.example"
+version = "1.0"
+description = "A sample Spring Boot application"
+
+apply plugin: 'idea'
+apply plugin: 'cobertura'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
 buildscript {
     ext {
         springBootVersion = '1.2.5.RELEASE'
     }
     dependencies {
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+        classpath "net.saliman:gradle-cobertura-plugin:2.2.8"
+
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
+
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.springframework:springloaded:1.2.3.RELEASE")
     }
@@ -13,11 +27,10 @@ buildscript {
     }
 }
 
-apply plugin: 'idea'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'java'
-apply plugin: 'spring-boot'
-apply plugin: 'war'
+cobertura {
+    coverageFormats = ['html', 'xml']
+    coverageIgnoreTrivial = true
+}
 
 configurations {
     providedRuntime
@@ -53,10 +66,12 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = "2.3"
 }
 
+test.finalizedBy(project.tasks.cobertura)
+
 war {
-    baseName = 'spring-boot-sample'
-    version = '1.0'
+    baseName = "spring-boot-sample"
+    version = "1.0"
 }

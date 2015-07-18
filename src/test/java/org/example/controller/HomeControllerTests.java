@@ -22,28 +22,32 @@
  * SOFTWARE.
  */
 
-package org.example;
+package org.example.controller;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 /**
- * Integration tests for {@link Application}.
+ * Unit tests for {@link HomeController}.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-public class ApplicationTests
+public class HomeControllerTests extends ControllerTests
 {
   /**
-   * Tests the application's Spring context loads successfully.
+   * Tests that the home page can be loaded correctly.
    */
   @Test
-  public void contextLoads()
+  public void testHome() throws Exception
   {
-    Application.main();
+    mock.perform(get("/"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("page/thymeleaf/home"));
+  }
+
+  protected Object controller()
+  {
+    return new HomeController();
   }
 }

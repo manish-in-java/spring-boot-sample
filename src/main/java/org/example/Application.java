@@ -38,7 +38,7 @@ public class Application
    *
    * @param args Command-line arguments passed to the application.
    */
-  public static void main(final String[] args)
+  public static void main(final String... args)
   {
     SpringApplication.run(Application.class, args);
   }
