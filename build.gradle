@@ -2,21 +2,16 @@ group = "org.example"
 version = "1.0"
 description = "A sample Spring Boot application"
 
-apply plugin: 'idea'
-apply plugin: 'cobertura'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'java'
-apply plugin: 'spring-boot'
-apply plugin: 'war'
-
 buildscript {
     ext {
-        springBootVersion = '1.2.5.RELEASE'
+        springBootVersion = "1.2.5.RELEASE"
     }
     dependencies {
         classpath "net.saliman:gradle-cobertura-plugin:2.2.8"
 
         classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
+
+        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0"
 
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.springframework:springloaded:1.2.3.RELEASE")
@@ -27,8 +22,16 @@ buildscript {
     }
 }
 
+apply plugin: "cobertura"
+apply plugin: "com.github.kt3k.coveralls"
+apply plugin: "idea"
+apply plugin: "io.spring.dependency-management"
+apply plugin: "java"
+apply plugin: "spring-boot"
+apply plugin: "war"
+
 cobertura {
-    coverageFormats = ['html', 'xml']
+    coverageFormats = ["html", "xml"]
     coverageIgnoreTrivial = true
 }
 
@@ -62,8 +65,8 @@ repositories {
     mavenLocal()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 task wrapper(type: Wrapper) {
     gradleVersion = "2.3"
