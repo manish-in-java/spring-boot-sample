@@ -4,7 +4,6 @@
 .idea/
 .settings/
 build/
-gradle/
 target/
 *~
 *.db
