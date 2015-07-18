@@ -1,3 +1,5 @@
+[![Build status](https://drone.io/github.com/manish-in-java/spring-boot-sample/status.png)](https://drone.io/github.com/manish-in-java/spring-boot-sample/latest)
+[![Code coverage](https://coveralls.io/repos/manish-in-java/spring-boot-sample/badge.svg?branch=master&service=github)](https://coveralls.io/github/manish-in-java/spring-boot-sample?branch=master)
 [![MIT License](http://b.repl.ca/v1/License-MIT-green.png)](#LICENSE)
 
 # Introduction
